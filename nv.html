@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Testing Form</title>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body {margin: 0;}
+		.container {width:100%;}
+		[class^="col-"] {padding-left: 0;padding-right: 0;}
+		.form-horizontal .form-group{margin:0;}
+		@media (max-width: 797px) {
+			body { 
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
+		
+		/* Section 1: Fixed Static Image */
+		div#section-1 img{
+			position:static;
+			height:auto;
+			width:100%;
+		}
+		
+		/* Section 2: Embedded Video + Image */
+		.row-eq-height{overflow: hidden; }
+		.row-eq-height > [class*="col-"]{margin-bottom: -99999px; padding-bottom: 99999px;}
+		div#section-2 .sec-2-content-right{background-color:black;}
+		div#section-2 #youtube-iframe{
+			width:100%;
+			height:400px;
+			padding:10px 0;
+		}
+		div#section-2 .sec2-img{
+			height:auto;
+			width:80%;
+			padding:20px 0;
+		}
+		
+		/* Section 3: Venue Image */
+		div#section-3 img{
+			height:auto;
+			width:100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-- Static Image Banner -->
+		<div class="row" id="section-1">
+			<div class="col-sm-12">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Ha_Long_bay_%28Vietnam%29_banner_Islands_in_the_bay.png" />
+			</div>
+		</div>
+		
+		<!-- Video Section + Image -->
+		<div class="row row-eq-height" id="section-2">
+			<div class="sec-2-content-left col-xs-12 col-md-6 centered">
+				<iframe id="youtube-iframe" src="https://www.youtube.com/embed/65crjHQbuWc" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<div class="sec-2-content-right col-xs-12 col-md-6">
+				<img class="center-block sec2-img" src="https://thumb9.shutterstock.com/display_pic_with_logo/3407132/541489036/stock-vector-cosmetic-droplet-bottle-ads-skincare-products-isolated-on-underwater-background-d-illustration-541489036.jpg" />
+			</div>
+		</div>
+		
+		<!-- Venue Image -->
+		<div class="row" id="section-3">
+			<div class="col-sm-12">
+				<img src="http://www.uk-featherflags.co.uk/media/wysiwyg/really_long_bottom_banner.png" />
+			</div>
+		</div>
+		
+		<!-- Google Form -->		
+		<div class="row">
+			<form class="form-horizontal" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc8Et4YI0S3ggV1S2e_uAsC2rTXgQnCzbHpzgnsaQBKjCJTQQ/formResponse" method="post">
+			<div class="form-group">
+				<div class="col-xs-12"><br/> <!-- Customer Name -->
+					<label class="control-label col-xs-2 col-sm-4" for="name">Name:</label>
+					<div class="col-xs-9 col-sm-4">
+						<input type="text" class="form-control" id="name" placeholder="enter name" name="entry.1120216682" required>
+					</div>
+				</div>
+				<div class="col-xs-12"><br/> <!-- Customer Contact No -->
+					<label class="control-label col-xs-2 col-sm-4" for="contact">Contact No:</label>
+					<div class="col-xs-9 col-sm-4">
+						<input type="text" pattern="[[0-9]{8,11}" title="8 or more digits without any symbol" class="form-control" id="contact" placeholder="0124567890" name="entry.1798707854" required>
+					</div>
+				</div>
+				<div class="col-xs-12"><br/> <!-- Customer Email -->
+					<label class="control-label col-xs-2 col-sm-4" for="email">Email:</label>
+					<div class="col-xs-9 col-sm-4">
+						<input type="Email" class="form-control" id="email" placeholder="abc@email.com" name="entry.374513312" required>
+					</div>
+				</div>
+				<div class="col-xs-12"><br/> <!-- Customer Email -->
+					<label class="control-label col-xs-2 col-sm-4" for="location">Location:</label>
+					<div class="col-xs-9 col-sm-4">
+						<select class="form-control" id="location" name="entry.1806402334" required>
+							<option value="" selected disabled>Choose a location</option>
+							<option value="Kota Kinabalu (22 Jul 2017)">Kota Kinabalu (22 Jul 2017)</option>
+							<option value="Kuala Lumpur (29 Jul 2017)">Kuala Lumpur (29 Jul 2017)</option>
+							<option value="Johor Bahru (5 Jul 2017)">Johor Bahru (5 Jul 2017)</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-12"><br/> <!-- Submit Form Buttom -->
+					<div class="col-xs-offset-5 col-xs-2 col-sm-offset-5 col-sm-2">
+						<input type="submit" value="RSVP now" />
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+		<br/></br/><br/>
+	</div>
+		
+</body>
+</html>
